@@ -1,25 +1,14 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import mockUsers from './MockUsers';
+import mockApartments from './MockApartments';
 
-function App() {
+const App = () => {
+  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [apartments, setApartments] = useState(mockApartments)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>Apartment App</div>
+  )
 }
 
-export default App;
+export default App
