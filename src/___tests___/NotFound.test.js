@@ -9,7 +9,6 @@ describe("<NotFound />", () => {
                 <NotFound />
             </BrowserRouter>
         )
-        screen.logTestingPlaygroundURL()
         const footer = screen.getByText(/notfound/i)
         expect(footer).toBeInTheDocument()
     })
