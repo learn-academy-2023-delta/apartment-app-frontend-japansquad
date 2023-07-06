@@ -30,3 +30,10 @@ background: linear-gradient(90deg, #fff 0%, #7d7d80 100%);
   color: white;
   font-size: 10px;
 }
+
+.apartment-index-cards{
+  display: block;
+  height: 100%;
+  width: 100%;
+
+}
