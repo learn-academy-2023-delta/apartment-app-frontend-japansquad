@@ -9,7 +9,6 @@ const renderShow = () => {
         </BrowserRouter>
         
     ) 
-    screen.logTestingPlaygroundURL()
 }
 
 describe("<Footer />", () => {
