@@ -2,7 +2,12 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+    <div className='footer'>
+      Copy Right: Brandon Shinzato, Paul Gooden, Michael Ortega
+
+    </div>
+    </>
   )
 }
 
