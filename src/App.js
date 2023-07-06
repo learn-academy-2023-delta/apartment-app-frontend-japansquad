@@ -24,7 +24,7 @@ const App = () => {
       <Header /> 
         <Routes>
           <Route exact path = "/" element={<Home />} />
-          <Route path = "/apartments" element={<ApartmentIndex />} />
+         <Route path = "/apartments" element={<ApartmentIndex apartments={apartments}/>} />
           <Route path = "/apartments/:id" element={<ApartmentShow />} />
           <Route path = "/newapartment" element={<ApartmentNew />} />
           <Route path = "/editapartment/:id" element={<ApartmentEdit />} />
