@@ -19,13 +19,17 @@ import SignIn from './pages/SignIn';
 const App = () => {
   const [currentUser, setCurrentUser] = useState(mockUsers[0])
   const [apartments, setApartments] = useState(mockApartments)
+
+
+
+
   return (
     <>
       <Header /> 
         <Routes>
           <Route exact path = "/" element={<Home />} />
-          <Route path = "/apartments" element={<ApartmentIndex />} />
-          <Route path = "/apartments/:id" element={<ApartmentShow />} />
+          <Route path = "/apartments" element={<ApartmentIndex apartments={apartments}/>} />
+          <Route path = "/apartments/:id" element={<ApartmentShow current_user={currentUser} apartments={apartments}/>} />
           <Route path = "/newapartment" element={<ApartmentNew />} />
           <Route path = "/editapartment/:id" element={<ApartmentEdit />} />
           <Route path = "/myapartments" element={<ApartmentProtectedIndex />} />

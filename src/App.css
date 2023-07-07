@@ -1,4 +1,4 @@
-home-style {
+.home-style {
   background-image: url("https://wallpaperaccess.com/full/4888.jpg");
   width: 100vh;
   height: 70vh;
@@ -22,5 +22,3 @@ home-style {
   background-color: gray;
   border: 9px ridge cyan;
 }
-
-
