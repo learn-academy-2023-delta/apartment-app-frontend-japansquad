@@ -2,8 +2,11 @@ import React from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button, CardText } from 'reactstrap';
+import ApartmentProtectedIndex from './ApartmentProtectedIndex';
+import { Route } from 'react-router-dom';
 
-const ApartmentShow = ({apartments}) => {
+const ApartmentShow = ({apartments, currentUser}) => {
+  
   let { id } = useParams()
   const currentApartment = apartments?.find(apartment => apartment.id === +id)
   return (
@@ -44,9 +47,21 @@ const ApartmentShow = ({apartments}) => {
               <CardText>
                 Amenities: {currentApartment?.amenities}
               </CardText>
-              <NavLink to="/apartments">
+                    {!currentUser && (
+                      <>
+                      <NavLink to="/apartments">
+                        <Button>
+                           Back To List
+                       </Button>
+              </NavLink>
+                      </>
+                    )}
+              <NavLink to='/myapartments'>
                   <Button>
-                      Back To List
+                  {currentUser && (
+                  <Route path ="/myapartments" element={<ApartmentProtectedIndex  currentUser={currentUser} apartments={apartments}/>}/>
+                   )}
+                    My List
                   </Button>
               </NavLink>
             </CardBody>

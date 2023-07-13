@@ -37,3 +37,33 @@ background: linear-gradient(90deg, #fff 0%, #7d7d80 100%);
   width: 100%;
 
 }
+
+.home-style {
+  background-image: url("https://wallpaperaccess.com/full/4888.jpg");
+  width: 100vh;
+  height: 70vh;
+  margin-left: 55px;
+  margin-right: 30px;
+  margin-top: 50px;
+  border:  11px ridge cyan;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+.greeting {
+  color: aliceblue;
+  text-align: center;
+  background-color: grey;
+  border: 9px ridge cyan;
+}
+
+.title {
+  color: green-yellow;
+  text-align: center;
+  background-color: gray;
+  border: 9px ridge cyan;
+}
+
+.welcome-box {
+  text-align: center;
+}

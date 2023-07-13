@@ -17,24 +17,36 @@ import SignIn from './pages/SignIn';
 
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState(mockUsers[0])
+  const [currentUser, setCurrentUser] = useState(mockUsers[1])
   const [apartments, setApartments] = useState(mockApartments)
 
+  const logout = () => {
+    return setCurrentUser(null)
+  }
 
+  const login = (userInfo) => {
+    console.log(login)
+  }
 
+  const signup = (userInfo) => {
+    console.log(signup)
+  }
 
+  console.log(currentUser)
   return (
     <>
-      <Header /> 
+      <Header currentUser={currentUser} logout={logout}/> 
         <Routes>
           <Route exact path = "/" element={<Home />} />
           <Route path = "/apartments" element={<ApartmentIndex apartments={apartments}/>} />
           <Route path = "/apartments/:id" element={<ApartmentShow current_user={currentUser} apartments={apartments}/>} />
           <Route path = "/newapartment" element={<ApartmentNew />} />
           <Route path = "/editapartment/:id" element={<ApartmentEdit />} />
-          <Route path = "/myapartments" element={<ApartmentProtectedIndex />} />
-          <Route path = "/signup" element={<SignUp />} />
-          <Route path = "/signin" element={<SignIn />} />
+          {currentUser && (
+            <Route path = "/myapartments" element={<ApartmentProtectedIndex  currentUser={currentUser} apartments={apartments}/>}/>
+          )}
+          <Route path = "/signup" element={<SignUp signup={signup} />} />
+          <Route path = "/signin" element={<SignIn login={login}/>} />
           <Route path = "*" element={<NotFound/>} />
         </Routes>
       <Footer />
